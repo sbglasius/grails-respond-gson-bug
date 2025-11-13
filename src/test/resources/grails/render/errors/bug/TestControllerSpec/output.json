@@ -1,0 +1,11 @@
+{
+  "error": {
+    "errors": [
+      {
+        "field": "name",
+        "rejectedValue": null,
+        "message": "Property [name] of class [class bug.TestCommand] cannot be null"
+      }
+    ]
+  }
+}
