@@ -1,0 +1,21 @@
+import org.springframework.validation.*
+
+model {
+    Errors errors
+}
+
+json {
+    error {
+        if(errors.globalErrorCount == 1 && errors.fieldErrorCount == 0) {
+            message messageSource.getMessage(errors.globalError, locale)
+        } else {
+            errors(errors.allErrors) { ObjectError error ->
+                if(error instanceof FieldError) {
+                    field error.field
+                    rejectedValue error.rejectedValue
+                }
+                message messageSource.getMessage(error, locale)
+            }
+        }
+    }
+}

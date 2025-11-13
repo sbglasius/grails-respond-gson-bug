@@ -23,6 +23,7 @@ plugins {
 apply plugin: "org.grails.grails-web"
 apply plugin: "org.grails.grails-gsp"
 
+
 group = "grails.render.errors.bug"
 
 repositories {
@@ -52,6 +53,8 @@ dependencies {
     implementation "org.grails:grails-plugin-url-mappings"
     implementation "org.grails:grails-web-boot"
     implementation "org.grails.plugins:gsp"
+    implementation "org.grails.plugins:views-json"
+    implementation "org.grails.plugins:views-json-templates"
     implementation "org.grails.plugins:hibernate5"
     implementation "org.grails.plugins:scaffolding"
     implementation "org.springframework.boot:spring-boot-autoconfigure"
@@ -77,6 +80,9 @@ dependencies {
     testRuntimeOnly "org.seleniumhq.selenium:selenium-chrome-driver:4.19.1"
     testRuntimeOnly "org.seleniumhq.selenium:selenium-firefox-driver:4.19.1"
     testRuntimeOnly "org.seleniumhq.selenium:selenium-safari-driver:4.19.1"
+    
+    testImplementation platform('com.agorapulse:gru-bom:2.2.2')
+    testImplementation 'com.agorapulse:gru-grails'
 }
 
 application {
